@@ -19,7 +19,7 @@ interface Props {
 export const GiftButton = ({name, click}: Props) => {
   const boxSize = Math.floor(Math.random() * (200 - 100 + 1) + 100);
   const stripesColor = randomColor();
-  const boxColor = invertColor(stripesColor);
+  const boxColor = randomColor();
   const scaleAnimationStyle = useAnimatedStyle(() => ({
     transform: [
       {
@@ -94,10 +94,10 @@ export const GiftButton = ({name, click}: Props) => {
           click();
         }}>
         <View
-          style={[styles.horizontalStrip, {backgroundColor: stripesColor}]}
+          style={[styles.horizontalStrip, {backgroundColor: boxColor != stripesColor ? stripesColor : randomColor()}]}
         />
-        <View style={[styles.verticalStrip, {backgroundColor: stripesColor}]}>
-          <Text style={[styles.buttonText, {color: boxColor}]}>{name}</Text>
+        <View style={[styles.verticalStrip, {backgroundColor:stripesColor}]}>
+          <Text style={[styles.buttonText, {color: invertColor(stripesColor)}]}>{name}</Text>
         </View>
       </TouchableOpacity>
     </Animated.View>

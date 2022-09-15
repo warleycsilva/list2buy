@@ -25,9 +25,26 @@ export const styles = StyleSheet.create({
     elevation: 5,
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 22,
+    fontWeight: "bold",
+    textAlign: 'center',
+    fontStyle: 'italic',
+  },
+  introductionContainer: {
+    heigth: 200,
+    width: '100%',
+    paddingTop: '50%',
+    paddingHorizontal: '10%',
+    marginHorizontal: '50%',
+    marginVertical: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    alignSelf: 'center',
+  },
+  introductionText: {
+    fontSize: 22,
     color: Colors.white,
-    fontWeight: "400",
+    fontWeight: "300",
     textAlign: 'center',
   },
   bottomContainer: {

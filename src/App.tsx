@@ -10,12 +10,15 @@
 
 import React from 'react';
 import {View} from 'react-native';
-import {Home} from './views/home';
+import {NavigationContainer} from '@react-navigation/native';
+import MainNavigator from './navigators/main';
 
 const App = () => {
   return (
     <View style={[{flex: 1}]}>
-      <Home />
+      <NavigationContainer>
+        <MainNavigator />
+      </NavigationContainer>
     </View>
   );
 };

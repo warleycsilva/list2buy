@@ -12,7 +12,7 @@ export const invertColor = (hex: string) => {
     hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
   }
   if (hex.length !== 6) {
-    return '#1c1c1c';
+    return randomColor();
   }
   // invert color components
   const r = (255 - parseInt(hex.slice(0, 2), 16)).toString(16),

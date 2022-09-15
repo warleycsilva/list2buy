@@ -1,4 +1,4 @@
-import {Dimensions, StyleSheet, View} from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from "react-native";
 import Svg, {Image} from 'react-native-svg';
 import React from 'react';
 import {styles} from '../../../styles';
@@ -18,6 +18,10 @@ export const Home = () => {
             height={height}
             preserveAspectRatio={'xMidYMid slice'}
           />
+          <View style={[styles.homeTitleContainer]}>
+            <Text style={[styles.homeTitle]}>List2Buy</Text>
+            <Text style={[styles.homeSubtitle]}>Cause if you plan, it works.</Text>
+          </View>
         </Svg>
       </View>
       <View style={[styles.bottomContainer]}>

@@ -72,7 +72,7 @@ export const GiftButton = ({name, click}: Props) => {
       },
       {
         rotate: withSequence(
-          withTiming(`-${Math.floor(Math.random() * 50 + 1)}deg`, {
+          withTiming(`${Math.floor(Math.random() * (92) - 45)}deg`, {
             duration: 300,
           }),
         ),

@@ -1,21 +1,21 @@
-import {Dimensions, StyleSheet} from 'react-native';
-import {Colors} from './config/colors';
+import { Dimensions, StyleSheet } from "react-native";
+import { Colors } from "./config/colors";
 
-const {height, width} = Dimensions.get('window');
+const { height, width } = Dimensions.get("window");
+
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end",
   },
   button: {
     backgroundColor: Colors.alternative,
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: 10,
-    marginHorizontal: 20,
-    marginVertical: 10,
-    shadowColor: '#000',
+    marginHorizontal: 5,
+    marginVertical: 5,
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 4,
@@ -25,12 +25,34 @@ export const styles = StyleSheet.create({
     elevation: 5,
   },
   buttonText: {
-    fontSize: 22,
+    fontSize: 20,
     color: Colors.white,
-    fontWeight: '300',
+    fontWeight: "400",
+    textAlign: 'center',
   },
   bottomContainer: {
+    marginHorizontal: 30,
+    marginVertical: 5,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+    alignSelf: 'flex-end',
+  },
+  verticalStrip: {
+    backgroundColor: 'red',
+    height: 30,
+    width: '100%',
     justifyContent: 'center',
-    height: height / 3,
+    borderRadius: 2,
+  },
+  horizontalStrip: {
+    backgroundColor: 'red',
+    height: '100%',
+    width: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    borderRadius: 2,
   },
 });

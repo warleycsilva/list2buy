@@ -5,6 +5,7 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSequence,
+  withSpring,
   withTiming,
 } from 'react-native-reanimated';
 import {invertColor, randomColor} from '../../utils/color';
@@ -34,6 +35,45 @@ export const GiftButton = ({name, click}: Props) => {
           }),
           withTiming(1, {
             duration: 200,
+          }),
+        ),
+      },
+      {
+        translateY: withSequence(
+          withTiming(-Math.floor(Math.random() * (200 - 100 + 1) + 100), {
+            duration: 300,
+          }),
+          withTiming(0, {
+            duration: 300,
+          }),
+          withTiming(Math.floor(Math.random() * (100 - 50 + 1) + 50), {
+            duration: 300,
+          }),
+          withTiming(0, {
+            duration: 300,
+          }),
+        ),
+      },
+      {
+        translateX: withSequence(
+          withTiming(Math.floor(Math.random() * (-200 - 100 + 1) + 100), {
+            duration: 300,
+          }),
+          withTiming(0, {
+            duration: 300,
+          }),
+          withTiming(Math.floor(Math.random() * (-200 - 100 + 1) + 100), {
+            duration: 300,
+          }),
+          withTiming(0, {
+            duration: 300,
+          }),
+        ),
+      },
+      {
+        rotate: withSequence(
+          withTiming(`-${Math.floor(Math.random() * 50 + 1)}deg`, {
+            duration: 300,
           }),
         ),
       },

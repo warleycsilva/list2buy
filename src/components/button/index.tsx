@@ -24,13 +24,13 @@ export const GiftButton = ({name, click}: Props) => {
     transform: [
       {
         scale: withSequence(
-          withTiming(1.5, {
+          withTiming(1.2, {
             duration: 200,
           }),
-          withTiming(2, {
+          withTiming(1.4, {
             duration: 200,
           }),
-          withTiming(1.5, {
+          withTiming(1.2, {
             duration: 200,
           }),
           withTiming(1, {
@@ -46,7 +46,7 @@ export const GiftButton = ({name, click}: Props) => {
           withTiming(0, {
             duration: 300,
           }),
-          withTiming(Math.floor(Math.random() * (100 - 50 + 1) + 50), {
+          withTiming(Math.floor(Math.random() * (-100 - 100 + 1) + 100), {
             duration: 300,
           }),
           withTiming(0, {
@@ -56,13 +56,13 @@ export const GiftButton = ({name, click}: Props) => {
       },
       {
         translateX: withSequence(
-          withTiming(Math.floor(Math.random() * (-200 - 100 + 1) + 100), {
+          withTiming(Math.floor(Math.random() * (-110 - 50 + 1) + 50), {
             duration: 300,
           }),
           withTiming(0, {
             duration: 300,
           }),
-          withTiming(Math.floor(Math.random() * (-200 - 100 + 1) + 100), {
+          withTiming(Math.floor(Math.random() * (1 - 10 + 1) + 10), {
             duration: 300,
           }),
           withTiming(0, {

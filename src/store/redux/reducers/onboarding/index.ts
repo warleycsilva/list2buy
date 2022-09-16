@@ -1,6 +1,5 @@
 const INITIAL_STATE = {};
 const onboardingReducer = (state = INITIAL_STATE, action: any) => {
-  console.log(action);
   switch (action.type) {
     case 'SET_ONBOARDING':
       return action.payload;

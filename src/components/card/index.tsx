@@ -1,16 +1,37 @@
-import {Text, View} from 'react-native';
+import {Alert, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import { styles } from "../../styles";
 import Svg, { Image } from "react-native-svg";
+import { useDispatch } from 'react-redux';
+import { RemoveListItem } from '../../store/redux/actions/gifts';
 
 interface Props {
   name: string;
+  updateList(): void;
 }
 
-export const GiftCard = ({name}: Props) => {
+export const GiftCard = ({name,updateList}: Props) => {
   const imageSize = 30
+  const dispatch = useDispatch()
   return (
-    <View style={[styles.giftCard]}>
+    <TouchableOpacity style={[styles.giftCard]}
+    onPress={()=>{
+      Alert.alert("Delete item", "Are you sure?",
+        [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+          {
+            text: "Confirm",
+            onPress: () => {
+              dispatch(RemoveListItem(name));
+              updateList()
+            },
+            style: "cancel",
+          },
+        ])
+    }}>
       <Svg height={imageSize} width={imageSize}>
         <Image
           href={require('../../assets/gift_icon.png')}
@@ -20,6 +41,6 @@ export const GiftCard = ({name}: Props) => {
         />
       </Svg>
       <Text style={[styles.cardText]}>{name}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };

@@ -1,13 +1,10 @@
-import {Dimensions, ScrollView, StyleSheet, Text, View} from 'react-native';
-import Svg, {Image} from 'react-native-svg';
-import React, {useState} from 'react';
-import {styles} from '../../../styles';
-import {GiftButton} from '../../../components/gift-button';
-import {GiftCard} from '../../../components/card';
-import {AppButton} from '../../../components/button';
-import {AppModal} from '../../../components/modal';
+import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import Svg, { Image } from "react-native-svg";
+import React, { useEffect, useState } from "react";
+import { styles } from "../../../styles";
+import { GiftCard } from "../../../components/card";
+import { AppModal } from "../../../components/modal";
 import { useDispatch, useSelector } from "react-redux";
-import {Gift} from '../../../models/gifts';
 import { AddGiftButton } from "../../../components/add-gift-button";
 import { AddListItem } from "../../../store/redux/actions/gifts";
 
@@ -15,9 +12,13 @@ export const GiftList = () => {
   const {height, width} = Dimensions.get('window');
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [input, setInput] = useState<string>();
+  const [currentGiftList, setCurrentGiftList] = useState<string[]>([]);
   const listData = useSelector(state => state.gifts.gifts);
+
   const dispatch = useDispatch();
-  const currentGiftList: string[] = listData;
+  useEffect(()=>{{
+    setCurrentGiftList(listData)
+  }}, [currentGiftList])
 
   return (
     <View style={styles.container}>
@@ -33,9 +34,12 @@ export const GiftList = () => {
       </View>
       <ScrollView style={[styles.listContainer]}>
         {modalVisible && <AppModal />}
-        <AddGiftButton text={input} setValue={i=>setInput(i)} addToList={()=> dispatch(AddListItem(input))} />
+        <AddGiftButton text={input} setValue={i=>setInput(i)} addToList={()=> {
+          dispatch(AddListItem(input));
+          setCurrentGiftList([])
+        }}/>
         {currentGiftList?.map(item => {
-          return <GiftCard key={item} name={item} />;
+          return <GiftCard updateList={()=>setCurrentGiftList([])} key={item} name={item} />;
         })}
       </ScrollView>
     </View>

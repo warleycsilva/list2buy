@@ -29,14 +29,14 @@ export const Home = () => {
           name={'My List'}
           click={() => navigation.navigate('Gifts', {screen: 'GiftList'})}
         />
-        <GiftButton
-          name={'Catalog'}
-          click={() => navigation.navigate('Gifts', {screen: 'Catalog'})}
-        />
-        <GiftButton
-          name={'Find List'}
-          click={() => navigation.navigate('Gifts', {screen: 'Search'})}
-        />
+        {/*<GiftButton*/}
+        {/*  name={'Catalog'}*/}
+        {/*  click={() => navigation.navigate('Gifts', {screen: 'Catalog'})}*/}
+        {/*/>*/}
+        {/*<GiftButton*/}
+        {/*  name={'Find List'}*/}
+        {/*  click={() => navigation.navigate('Gifts', {screen: 'Search'})}*/}
+        {/*/>*/}
         <GiftButton
           name={'About'}
           click={() => navigation.navigate('Onboarding', {screen: 'Introduction'})}

@@ -6,4 +6,9 @@ App to compare prices of products before you buy it.
 
  - React Native - v0.70.0
  - React Native SVG
+ - Reanimated
+ - React Navigation
+ - Redux
+ - Redux Persist
+ - Async Storage
 

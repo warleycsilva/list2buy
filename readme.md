@@ -13,4 +13,4 @@ App to compare prices of products before you buy it.
  - Async Storage
 
 
-![How it works](https://raw.githubusercontent.com/warleycsilva/list2buy/main/src/assets/running.gif)
+![How it works](https://raw.githubusercontent.com/warleycsilva/list2buy/main/src/assets/running.gif){ width=50% }

@@ -1,7 +1,9 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Home} from '../views/gifts/home';
-import { OnboardingIntroduction } from '../views/onboarding/introduction';
-import { OnboardingFinish } from "../views/onboarding/finish";
+import {OnboardingIntroduction} from '../views/onboarding/introduction';
+import {OnboardingFinish} from '../views/onboarding/finish';
+import {getOnboardingData} from '../store/storage/onboarding';
+import {useMemo, useState} from 'react';
 
 const StackOnboarding = createNativeStackNavigator();
 

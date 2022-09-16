@@ -4,6 +4,7 @@ import React from 'react';
 import {styles} from '../../../styles';
 import {GiftButton} from '../../../components/button';
 import {useNavigation} from '@react-navigation/native';
+import {setOnboardingData} from '../../../store/storage/onboarding';
 
 export const OnboardingFinish = () => {
   const {height, width} = Dimensions.get('window');
@@ -20,16 +21,22 @@ export const OnboardingFinish = () => {
           />
           <View style={[styles.introductionContainer]}>
             <Text style={[styles.introductionText]}>
-              You can use it for any event.</Text>
+              You can use it for any event.
+            </Text>
             <Text style={[styles.introductionText]}>
-              So let's go! Click next to do your first list or find someone list.</Text>
+              So let's go! Click next to do your first list or find someone
+              list.
+            </Text>
           </View>
         </Svg>
       </View>
       <View style={[styles.bottomContainer]}>
         <GiftButton
           name={'Next'}
-          click={() => navigation.navigate('Gifts', {screen: 'Home'})}
+          click={async () => {
+            await setOnboardingData(true);
+            navigation.navigate('Gifts', {screen: 'Home'});
+          }}
         />
       </View>
     </View>

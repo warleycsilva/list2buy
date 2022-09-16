@@ -1,0 +1,5 @@
+export const GET_LIST = 'GET_LIST';
+export const DELETE_LIST_ITEM = 'DELETE_LIST_ITEM';
+export const ADD_LIST_ITEM = 'ADD_LIST_ITEM';
+export const SET_ONBOARDING = 'SET_ONBOARDING';
+export const GET_ONBOARDING = 'GET_ONBOARDING';

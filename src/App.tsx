@@ -12,14 +12,16 @@ import React from 'react';
 import {View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import MainNavigator from './navigators/main';
+import {Provider} from 'react-redux';
+import store from './store/redux';
 
 const App = () => {
   return (
-    <View style={[{flex: 1}]}>
-      <NavigationContainer>
-        <MainNavigator />
-      </NavigationContainer>
-    </View>
+      <View style={[{flex: 1}]}>
+        <NavigationContainer>
+          <MainNavigator />
+        </NavigationContainer>
+      </View>
   );
 };
 

@@ -12,7 +12,7 @@ const StackMain = createNativeStackNavigator();
 
 export default function MainNavigator() {
   const [hasCompletedOnboarding, setHasCompletedOnboarding] =
-    useState<boolean>(false);
+    useState<boolean>(true);
   useEffect(() => {
     updateOnboardingInfo();
     async function updateOnboardingInfo() {

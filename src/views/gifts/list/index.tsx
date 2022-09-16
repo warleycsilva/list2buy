@@ -1,11 +1,15 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, ScrollView, StyleSheet, Text, View} from 'react-native';
 import Svg, {Image} from 'react-native-svg';
-import React from 'react';
+import React, { useState } from 'react';
 import {styles} from '../../../styles';
-import {GiftButton} from '../../../components/button';
+import {GiftButton} from '../../../components/gift-button';
+import { GiftCard } from "../../../components/card";
+import { AppButton } from '../../../components/button';
+import { AppModal } from '../../../components/modal';
 
 export const GiftList = () => {
   const {height, width} = Dimensions.get('window');
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
 
   return (
     <View style={styles.container}>
@@ -19,9 +23,13 @@ export const GiftList = () => {
           />
         </Svg>
       </View>
-      <View style={[styles.bottomContainer]}>
-        <GiftButton name={'Gift List'} click={() => console.log('pressed')} />
-      </View>
+      <ScrollView style={[styles.listContainer]}>
+        {modalVisible && <AppModal/>}
+        <AppButton name={"+ New Item"} click={()=> setModalVisible(!modalVisible)} />
+        <GiftCard name={"teste1"}/>
+        <GiftCard name={"teste2"}/>
+        <GiftCard name={"teste2"}/>
+      </ScrollView>
     </View>
   );
 };

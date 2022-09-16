@@ -2,7 +2,7 @@ import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import Svg, {Image} from 'react-native-svg';
 import React from 'react';
 import {styles} from '../../../styles';
-import {GiftButton} from '../../../components/button';
+import {GiftButton} from '../../../components/gift-button';
 import {useNavigation} from '@react-navigation/native';
 import { OnboardingFinish } from "../finish";
 

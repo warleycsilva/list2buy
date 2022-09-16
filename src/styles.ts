@@ -1,21 +1,21 @@
-import { Dimensions, StyleSheet } from "react-native";
-import { Colors } from "./config/colors";
+import {Dimensions, StyleSheet} from 'react-native';
+import {Colors} from './config/colors';
 
-const { height, width } = Dimensions.get("window");
+const {height, width} = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
   },
   button: {
     backgroundColor: Colors.alternative,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 10,
     marginHorizontal: 5,
     marginVertical: 5,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 4,
@@ -24,9 +24,32 @@ export const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 5,
   },
+  appButton: {
+    width: '90%',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.alternative,
+    borderRadius: 10,
+    marginVertical: 5,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+    elevation: 5,
+  },
+  appButtonText: {
+    fontSize: 20,
+    fontWeight: '400',
+    textAlign: 'center',
+    color: Colors.text,
+  },
   buttonText: {
     fontSize: 22,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     textAlign: 'center',
     fontStyle: 'italic',
   },
@@ -37,8 +60,8 @@ export const styles = StyleSheet.create({
     paddingHorizontal: '10%',
     marginHorizontal: '50%',
     marginVertical: 5,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     alignSelf: 'center',
   },
   homeTitleContainer: {
@@ -48,28 +71,28 @@ export const styles = StyleSheet.create({
     paddingHorizontal: '10%',
     marginHorizontal: '50%',
     marginVertical: 5,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     alignSelf: 'center',
   },
   introductionText: {
     fontSize: 22,
     color: Colors.white,
-    fontWeight: "300",
+    fontWeight: '300',
     textAlign: 'center',
   },
   homeTitle: {
     fontSize: 40,
     color: Colors.white,
-    fontWeight: "300",
-    fontStyle: "italic",
+    fontWeight: '300',
+    fontStyle: 'italic',
     textAlign: 'center',
   },
   homeSubtitle: {
     fontSize: 18,
     color: Colors.white,
-    fontWeight: "300",
-    fontStyle: "italic",
+    fontWeight: '300',
+    fontStyle: 'italic',
     textAlign: 'center',
   },
   bottomContainer: {
@@ -77,8 +100,8 @@ export const styles = StyleSheet.create({
     marginVertical: 5,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
     alignSelf: 'flex-end',
   },
   verticalStrip: {
@@ -96,5 +119,55 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     borderRadius: 2,
+  },
+  giftCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 20,
+    width: '90%',
+    borderRadius: 10,
+    marginVertical: 10,
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+    elevation: 5,
+  },
+  listContainer: {
+    width: '100%',
+    height: '100%',
+    marginHorizontal: 30,
+    marginVertical: 5,
+  },
+  buttonsLayer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    width: '100%',
+    height: '90%',
+  },
+  cardText: {
+    fontSize: 18,
+    color: Colors.primary,
+    paddingLeft: 10,
+  },
+  appModal: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   },
 });

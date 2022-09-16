@@ -1,8 +1,9 @@
-const INITIAL_STATE = {completed: false};
+const INITIAL_STATE = {};
 const onboardingReducer = (state = INITIAL_STATE, action: any) => {
+  console.log(action);
   switch (action.type) {
     case 'SET_ONBOARDING':
-      return {completed: action.payload};
+      return action.payload;
     case 'GET_ONBOARDING':
       return state;
     default:

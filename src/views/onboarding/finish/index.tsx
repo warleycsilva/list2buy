@@ -1,14 +1,16 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
-import Svg, {Image} from 'react-native-svg';
-import React from 'react';
-import {styles} from '../../../styles';
-import {GiftButton} from '../../../components/gift-button';
-import {useNavigation} from '@react-navigation/native';
-import {setOnboardingData} from '../../../store/storage/onboarding';
+import { Dimensions, StyleSheet, Text, View } from "react-native";
+import Svg, { Image } from "react-native-svg";
+import React from "react";
+import { styles } from "../../../styles";
+import { GiftButton } from "../../../components/gift-button";
+import { useNavigation } from "@react-navigation/native";
+import { SetOnboarding } from "../../../store/redux/actions/onboarding";
+import { useDispatch } from "react-redux";
 
 export const OnboardingFinish = () => {
   const {height, width} = Dimensions.get('window');
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   return (
     <View style={styles.container}>
       <View style={StyleSheet.absoluteFill}>
@@ -34,7 +36,7 @@ export const OnboardingFinish = () => {
         <GiftButton
           name={'Next'}
           click={async () => {
-            await setOnboardingData(true);
+            dispatch(SetOnboarding({completed: true}));
             navigation.navigate('Gifts', {screen: 'Home'});
           }}
         />
@@ -42,3 +44,7 @@ export const OnboardingFinish = () => {
     </View>
   );
 };
+function dispatch(arg0: any) {
+    throw new Error('Function not implemented.');
+}
+

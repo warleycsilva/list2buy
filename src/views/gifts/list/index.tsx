@@ -1,15 +1,20 @@
 import {Dimensions, ScrollView, StyleSheet, Text, View} from 'react-native';
 import Svg, {Image} from 'react-native-svg';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {styles} from '../../../styles';
 import {GiftButton} from '../../../components/gift-button';
-import { GiftCard } from "../../../components/card";
-import { AppButton } from '../../../components/button';
-import { AppModal } from '../../../components/modal';
+import {GiftCard} from '../../../components/card';
+import {AppButton} from '../../../components/button';
+import {AppModal} from '../../../components/modal';
+import {useSelector} from 'react-redux';
+import {Gift} from '../../../models/gifts';
 
 export const GiftList = () => {
   const {height, width} = Dimensions.get('window');
   const [modalVisible, setModalVisible] = useState<boolean>(false);
+
+  const listData = useSelector(state => state.gifts.gifts);
+  const currentGiftList: string[] = listData;
 
   return (
     <View style={styles.container}>
@@ -24,11 +29,14 @@ export const GiftList = () => {
         </Svg>
       </View>
       <ScrollView style={[styles.listContainer]}>
-        {modalVisible && <AppModal/>}
-        <AppButton name={"+ New Item"} click={()=> setModalVisible(!modalVisible)} />
-        <GiftCard name={"teste1"}/>
-        <GiftCard name={"teste2"}/>
-        <GiftCard name={"teste2"}/>
+        {modalVisible && <AppModal />}
+        <AppButton
+          name={'+ New Item'}
+          click={() => setModalVisible(!modalVisible)}
+        />
+        {currentGiftList?.map(item => {
+          return <GiftCard key={item} name={item} />;
+        })}
       </ScrollView>
     </View>
   );

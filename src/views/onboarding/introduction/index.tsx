@@ -21,7 +21,7 @@ export const OnboardingIntroduction = () => {
           />
           <View style={[styles.introductionContainer]}>
             <Text style={[styles.introductionText]}>
-              Hi! List2Buy is a app to make and share with your family and friends what do you want to your wedding or birthday gift...</Text>
+              Hi! List2Buy is a app to make your wish list and keep it in your phone...</Text>
           </View>
         </Svg>
       </View>

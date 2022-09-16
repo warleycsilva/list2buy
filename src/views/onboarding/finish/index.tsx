@@ -23,11 +23,10 @@ export const OnboardingFinish = () => {
           />
           <View style={[styles.introductionContainer]}>
             <Text style={[styles.introductionText]}>
-              You can use it for any event.
+              You can use it for anything.
             </Text>
             <Text style={[styles.introductionText]}>
-              So let's go! Click next to do your first list or find someone
-              list.
+              So let's go! Click next to do your first list!
             </Text>
           </View>
         </Svg>

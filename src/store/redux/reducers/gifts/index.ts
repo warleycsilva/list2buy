@@ -1,6 +1,4 @@
-const INITIAL_STATE = {gifts: [
-    'example'
-  ]};
+const INITIAL_STATE = {gifts: []};
 const giftsReducer = (state = INITIAL_STATE, action: any) => {
   switch (action.type) {
     case 'GET_LIST':

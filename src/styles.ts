@@ -157,6 +157,7 @@ export const styles = StyleSheet.create({
   },
   appModal: {
     margin: 20,
+    height: 20,
     backgroundColor: 'white',
     borderRadius: 20,
     padding: 35,
@@ -170,4 +171,39 @@ export const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
+  textInput: {
+    width: '75%',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.white,
+    borderRadius: 10,
+    marginVertical: 5,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+    elevation: 5,
+  },
+  row:{
+    flexDirection: 'row'
+  },
+  addButton:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.primary,
+    height: 50,
+    width: 50,
+    margin: 5,
+    borderRadius: 10
+  },
+  addButtonText:{
+    fontSize: 20,
+    fontWeight: '400',
+    textAlign: 'center',
+    color: Colors.white,
+  }
 });

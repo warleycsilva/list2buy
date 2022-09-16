@@ -6,14 +6,17 @@ import {GiftButton} from '../../../components/gift-button';
 import {GiftCard} from '../../../components/card';
 import {AppButton} from '../../../components/button';
 import {AppModal} from '../../../components/modal';
-import {useSelector} from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import {Gift} from '../../../models/gifts';
+import { AddGiftButton } from "../../../components/add-gift-button";
+import { AddListItem } from "../../../store/redux/actions/gifts";
 
 export const GiftList = () => {
   const {height, width} = Dimensions.get('window');
   const [modalVisible, setModalVisible] = useState<boolean>(false);
-
+  const [input, setInput] = useState<string>();
   const listData = useSelector(state => state.gifts.gifts);
+  const dispatch = useDispatch();
   const currentGiftList: string[] = listData;
 
   return (
@@ -30,10 +33,7 @@ export const GiftList = () => {
       </View>
       <ScrollView style={[styles.listContainer]}>
         {modalVisible && <AppModal />}
-        <AppButton
-          name={'+ New Item'}
-          click={() => setModalVisible(!modalVisible)}
-        />
+        <AddGiftButton text={input} setValue={i=>setInput(i)} addToList={()=> dispatch(AddListItem(input))} />
         {currentGiftList?.map(item => {
           return <GiftCard key={item} name={item} />;
         })}
